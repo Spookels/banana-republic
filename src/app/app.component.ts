@@ -1,5 +1,6 @@
 import { Breakpoints } from '@angular/cdk/layout';
 import { Component, ViewChild } from '@angular/core';
+import { GenderModel } from './models/gender.model';
 import { MembershipModel } from './models/membership.model';
 import { RegisterModel } from './models/registration.model';
 
@@ -21,6 +22,7 @@ export class AppComponent {
 
   model: RegisterModel = new RegisterModel();
   membership: MembershipModel = new MembershipModel();
+  gender: GenderModel = new GenderModel();
 
   
 
@@ -35,6 +37,29 @@ export class AppComponent {
 
   onClear(){
     this.model = new RegisterModel();
+    this.membership = new MembershipModel();
+    this.gender = new GenderModel();
+  }
+
+  checkGender(gender: string){
+    switch (gender){
+      case 'male': {
+        if(this.gender.male)
+          this.gender.male = false;
+        else
+          this.gender.male = true;
+        this.gender.female = false;
+        break;
+      }
+      case 'female': {
+        if(this.gender.female)
+          this.gender.female = false;
+        else
+          this.gender.female = true;
+        this.gender.male = false;
+        break;
+      }
+    }
   }
 
   checkMale(){

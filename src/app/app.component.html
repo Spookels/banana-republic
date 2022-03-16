@@ -61,14 +61,15 @@
                 </div>
                 
                 <div class="box">
-                  <img alt="" *ngIf="!male"src="assets/mars-symbol.svg" class="icon box" (click)="checkMale()">
-                  <img alt="" *ngIf="male" src="assets/mars-symbol--white.svg" class="icon-opposite box" (click)="checkMale()"> 
+                  
+                  <img alt="" *ngIf="!gender.male"src="assets/mars-symbol.svg" class="icon box" (click)="checkGender('male')">
+                  <img alt="" *ngIf="gender.male" src="assets/mars-symbol--white.svg" class="icon-opposite box" (click)="checkGender('male')"> 
                   <span>Male</span>
                 </div>
                   
                 <div class="box">
-                  <img alt="" *ngIf="!female" src="assets/venus-symbol.svg" class="icon box" (click)="checkFemale()">
-                  <img alt="" *ngIf="female" src="assets/venus-symbol--white.svg" class="icon-opposite box" (click)="checkFemale()">
+                  <img alt="" *ngIf="!gender.female" src="assets/venus-symbol.svg" class="icon box" (click)="checkGender('female')">
+                  <img alt="" *ngIf="gender.female" src="assets/venus-symbol--white.svg" class="icon-opposite box" (click)="checkGender('female')">
                   <span>Female</span>
                 </div>
               </div>

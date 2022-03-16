@@ -1,15 +1,17 @@
 import { BaseModel } from "./base.model";
+import { GenderModel } from "./gender.model";
+import { MembershipModel } from "./membership.model";
 
 export class RegisterModel extends BaseModel{
 
     
     public name: string;
     public dateOfBirth: Date;
-    public gender: boolean;
+    public gender: GenderModel;
     public emailAddress: string;
     public mobile: number;
     public customerID: string;
-    public membership: string;
+    public membership: MembershipModel;
 
     // constructor() {
     //     super();
@@ -19,11 +21,11 @@ export class RegisterModel extends BaseModel{
        
         name: string,
         dateOfBirth: Date,
-        gender: boolean,
+        gender: GenderModel,
         emailAddress: string,
         mobile: number,
         customerID: string,
-        membership: string
+        membership: MembershipModel
     ) {
         let model = new RegisterModel();
         model.name = name;
